@@ -1,0 +1,73 @@
+<div
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  [ngClass]="{ show: showModal }"
+  [ngStyle]="{ display: showModal ? 'block' : 'none' }"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Vacature toevoegen</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="closeModal()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form [formGroup]="vacatureForm" (ngSubmit)="saveVacature()">
+            <div class="mb-3">
+              <label for="companyList" class="form-label">Bedrijfsnaam</label>
+              <input
+                class="form-control"
+                list="companyListOptions"
+                id="companyList"
+                placeholder="typ om te zoeken..."
+                formControlName="Company"
+              />
+              <datalist
+                id="companyListOptions"
+                *ngFor="let company of companyList"
+              >
+                <option
+                  *ngFor="let company of companyList"
+                  [value]="company.CompanyName"
+                ></option>
+              </datalist>
+            </div>
+            <div class="mb-3">
+              <label for="vacancyName" class="form-label">Titel</label>
+              <input
+                type="text"
+                class="form-control"
+                id="vacancyName"
+                formControlName="name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="descriptionVacancy" class="form-label"
+                >Omschrijving</label
+              >
+              <textarea
+                class="form-control"
+                id="descriptionVacancy"
+                rows="3"
+                formControlName="description"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">
+          Terug
+        </button>
+        <button type="submit" class="btn btn-base-color">Opslaan</button>
+      </div>
+    </div>
+  </div>
+</div>

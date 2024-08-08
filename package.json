@@ -1,0 +1,27 @@
+{
+  "name": "jexassessment",
+  "version": "1.0.0",
+  "description": "assessment voor jex - bedrijven en hun vacatures",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annavanbohemen/jexassessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annavanbohemen/jexassessment/issues"
+  },
+  "homepage": "https://github.com/annavanbohemen/jexassessment#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}

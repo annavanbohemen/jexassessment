@@ -1,0 +1,37 @@
+<div class="container company-container">
+    <div class="row">
+        <div>
+            <button type="button" class="btn btn-base-color" (click)="openVacancyModal()">
+                <i class="bi bi-plus"></i>
+                vacature toevoegen
+            </button>
+        </div>
+        
+    </div>
+    <div class="row table-row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Adres</th>
+            <th scope="col">Vacatures</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let company of companyVacancyList">
+            <td>{{ company.CompanyName }}</td>
+            <td>{{ company.CompanyAddress }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let vacancy of company.Vacancies">
+                  {{ vacancy.Vacancytitle }} - {{ vacancy.Vacancydescription }}
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+<app-vacancy-modal></app-vacancy-modal>
