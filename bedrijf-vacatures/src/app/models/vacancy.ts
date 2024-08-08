@@ -1,5 +1,5 @@
 export interface vacancy {
-        VacancyId: number,
-        Vacancytitle: string, 
-        Vacancydescription: string
+        vacancyId: number,
+        vacancyTitle: string, 
+        vacancyDescription: string
 }

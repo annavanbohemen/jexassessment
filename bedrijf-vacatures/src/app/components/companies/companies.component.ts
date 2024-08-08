@@ -20,15 +20,18 @@ export class CompaniesComponent {
 
   loadCompanies(): void {
     this.companyService.getCompaniesWithVacancies().subscribe((data: any) => {
-      console.log('data', data)
       this.companyVacancyList = data.result.filter(
         (company: company) =>
-          Array.isArray(company.Vacancies) && company.Vacancies.length > 0
+          Array.isArray(company.vacancies) && company.vacancies.length > 0
       );
     });
   }
 
   openVacancyModal() {
     this.modalService.open()
+  }
+
+  openCompany() {
+    //this.modalService change service so handles mutiple modals
   }
 }

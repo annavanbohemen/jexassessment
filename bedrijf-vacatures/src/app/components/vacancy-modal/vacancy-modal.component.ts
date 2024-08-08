@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
 import { company } from 'src/app/models/company';
 import { CompanyService } from 'src/app/services/company.service';
 import { ModalService } from 'src/app/services/modal.service';
@@ -15,7 +14,7 @@ export class VacancyModalComponent {
   public companyList: company[] = [];
 
   public vacatureForm = new FormGroup({
-    company: new FormControl('',Validators.required),
+    companyName: new FormControl('',Validators.required),
     name: new FormControl('',Validators.required),
     description: new FormControl(''),
   })
@@ -41,7 +40,7 @@ export class VacancyModalComponent {
 
   saveVacature() {
     if(this.vacatureForm.controls.name.value != undefined || this.vacatureForm.controls.name.value != null){
-      const companyId = this.getCompanyIdByName(this.vacatureForm.controls.company.value);
+      const companyId = this.getCompanyIdByName(this.vacatureForm.controls.companyName.value);
       if (companyId === undefined || companyId === null) {
         throw new TypeError('Bedrijf was niet gevonden, neem contact op met uw ...');
       }
@@ -52,7 +51,7 @@ export class VacancyModalComponent {
     }
 
     getCompanyIdByName(companyName: string | null): number | undefined {
-      const company = this.companyList.find(c => c.CompanyName === companyName);
-      return company ? company.CompanyId : undefined;
+      const company = this.companyList.find(c => c.companyName === companyName);
+      return company ? company.companyId : undefined;
     }
   }

@@ -1,8 +1,8 @@
 import { vacancy } from "./vacancy";
 
 export interface company {
-    CompanyId: number,
-    CompanyName: string,
-    CompanyAddress: string,
-    Vacancies: vacancy[]
+    companyId: number,
+    companyName: string,
+    companyAddress: string,
+    vacancies: vacancy[]
 }

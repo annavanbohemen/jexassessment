@@ -6,20 +6,20 @@
   [ngStyle]="{ display: showModal ? 'block' : 'none' }"
 >
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Vacature toevoegen</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-          (click)="closeModal()"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <form [formGroup]="vacatureForm" (ngSubmit)="saveVacature()">
+    <form [formGroup]="vacatureForm" (ngSubmit)="saveVacature()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Vacature toevoegen</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="closeModal()"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div>
             <div class="mb-3">
               <label for="companyList" class="form-label">Bedrijfsnaam</label>
               <input
@@ -27,15 +27,18 @@
                 list="companyListOptions"
                 id="companyList"
                 placeholder="typ om te zoeken..."
-                formControlName="Company"
+                formControlName="companyName"
               />
+              <div *ngIf="vacatureForm.controls.companyName.invalid && (vacatureForm.controls.companyName.dirty || vacatureForm.controls.companyName.touched)" class="validation-alert" role="alert">
+                <div *ngIf="vacatureForm.controls.companyName.errors?.['required']">Bedrijf is verplicht.</div>
+              </div>
               <datalist
                 id="companyListOptions"
                 *ngFor="let company of companyList"
               >
                 <option
                   *ngFor="let company of companyList"
-                  [value]="company.CompanyName"
+                  [value]="company.companyName"
                 ></option>
               </datalist>
             </div>
@@ -47,6 +50,9 @@
                 id="vacancyName"
                 formControlName="name"
               />
+              <div *ngIf="vacatureForm.controls.name.invalid && (vacatureForm.controls.name.dirty || vacatureForm.controls.name.touched)" class="validation-alert" role="alert">
+                <div *ngIf="vacatureForm.controls.name.errors?.['required']">title is verplicht.</div>
+              </div>
             </div>
             <div class="mb-3">
               <label for="descriptionVacancy" class="form-label"
@@ -59,15 +65,19 @@
                 formControlName="description"
               ></textarea>
             </div>
-          </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="closeModal()"
+          >
+            Terug
+          </button>
+          <button type="submit" class="btn btn-base-color">Opslaan</button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="closeModal()">
-          Terug
-        </button>
-        <button type="submit" class="btn btn-base-color">Opslaan</button>
-      </div>
-    </div>
+    </form>
   </div>
 </div>

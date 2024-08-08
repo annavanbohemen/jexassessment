@@ -12,21 +12,28 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Adres</th>
-            <th scope="col">Vacatures</th>
+            <th scope="col" class="table-header">Name</th>
+            <th scope="col" class="table-header">Adres</th>
+            <th scope="col" class="table-header">Vacatures</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let company of companyVacancyList">
-            <td>{{ company.CompanyName }}</td>
-            <td>{{ company.CompanyAddress }}</td>
-            <td>
+            <td class="table-body companyName">{{ company.companyName }}</td>
+            <td class="table-body">{{ company.companyAddress }}</td>
+            <td class="table-body">
               <ul>
-                <li *ngFor="let vacancy of company.Vacancies">
-                  {{ vacancy.Vacancytitle }} - {{ vacancy.Vacancydescription }}
+                <li *ngFor="let vacancy of company.vacancies">
+                  {{ vacancy.vacancyTitle }} - {{ vacancy.vacancyDescription }}
                 </li>
               </ul>
+            </td>
+            <td>
+              <div>
+                <i class="bi bi-pencil-fill" (click)="openCompany()"></i> 
+              </div>
+              
             </td>
           </tr>
         </tbody>

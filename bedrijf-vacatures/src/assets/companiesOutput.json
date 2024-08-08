@@ -1,65 +1,65 @@
 {
     "result" : [
         {
-          "CompanyId": 1,
-          "CompanyName": "Tech Corp",
-          "CompanyAddress": "123 Tech Street",
-          "Vacancies": [
+          "companyId": 1,
+          "companyName": "Tech Corp",
+          "companyAddress": "123 Tech Street",
+          "vacancies": [
             {
-              "VacancyId": 1,
-              "Vacancytitle": "Software Engineer",
-              "Vacancydescription": "Develop and maintain software applications."
+              "vacancyId": 1,
+              "vacancyTitle": "Software Engineer",
+              "vacancyDescription": "Develop and maintain software applications."
             },
             {
-              "VacancyId": 2,
-              "Vacancytitle": "Product Manager",
-              "Vacancydescription": "Develop and maintain software applications."
+              "vacancyId": 2,
+              "vacancyTitle": "Product Manager",
+              "vacancyDescription": "Develop and maintain software applications."
             }
           ]
         },
         {
-          "CompanyId": 2,
-          "CompanyName": "Business Solutions",
-          "CompanyAddress": "456 Business Ave",
-          "Vacancies": [
+          "companyId": 2,
+          "companyName": "Business Solutions",
+          "companyAddress": "456 Business Ave",
+          "vacancies": [
             {
-              "VacancyId": 3,
-              "Vacancytitle": "Business Analyst",
-              "Vacancydescription":
+              "vacancyId": 3,
+              "vacancyTitle": "Business Analyst",
+              "vacancyDescription":
                 "Analyze business processes and recommend improvements."
             }
           ]
         },
         {
-          "CompanyId": 3,
-          "CompanyName": "Innovative Labs",
-          "CompanyAddress": "789 Innovation Blvd",
-          "Vacancies": [
+          "companyId": 3,
+          "companyName": "Innovative Labs",
+          "companyAddress": "789 Innovation Blvd",
+          "vacancies": [
             {
-              "VacancyId": 4,
-              "Vacancytitle": "Research Scientist",
-              "Vacancydescription":
+              "vacancyId": 4,
+              "vacancyTitle": "Research Scientist",
+              "vacancyDescription":
                 "Conduct research and experiments in innovative technology."
             },
             {
-              "VacancyId": 5,
-              "Vacancytitle": "Lab Technician",
-              "Vacancydescription":
+              "vacancyId": 5,
+              "vacancyTitle": "Lab Technician",
+              "vacancyDescription":
                 "Conduct research and experiments in innovative technology."
             }
           ]
         },
         {
-          "CompanyId": 4,
-          "CompanyName": "Creative Minds",
-          "CompanyAddress": "101 Creative Way",
-          "Vacancies": []
+          "companyId": 4,
+          "companyName": "Creative Minds",
+          "companyAddress": "101 Creative Way",
+          "vacancies": []
         },
         {
-          "CompanyId": 5,
-          "CompanyName": "Future Ventures",
-          "CompanyAddress": "202 Future Road",
-          "Vacancies": []
+          "companyId": 5,
+          "companyName": "Future Ventures",
+          "companyAddress": "202 Future Road",
+          "vacancies": []
         }
       ]
 }
